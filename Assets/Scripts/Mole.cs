@@ -39,6 +39,7 @@ public class Mole : MonoBehaviour {
 			visibleHeight,
 			transform.localPosition.z
 		);
+		print("rising");
 
 		dissapearTimer = dissapearDuration;
 	}
@@ -53,5 +54,6 @@ public class Mole : MonoBehaviour {
 
 	public void OnHit() {
 		Hide ();
+		print("mole hit");
 	}
 }
