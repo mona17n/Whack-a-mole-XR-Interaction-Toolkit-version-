@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,11 +6,14 @@ public class Mole : MonoBehaviour {
 
 	public float visibleHeight = 0.2f;
 	public float hiddenHeight = -0.2f;
-	private Vector3 targetPosition;
+	
 	public float speed = 3f;
+
+	private Vector3 targetPosition;
 
 	public float dissapearDuration = 1.25f;
 	private float dissapearTimer = 0f;
+	public bool Whackable = false;
 
 
 	// Use this for initialization
@@ -34,17 +37,19 @@ public class Mole : MonoBehaviour {
 	}
 
 	public void Rise() {
+		Whackable = true;
 		targetPosition = new Vector3 (
 			transform.localPosition.x,
 			visibleHeight,
 			transform.localPosition.z
 		);
-		print("rising");
+		
 
 		dissapearTimer = dissapearDuration;
 	}
 
 	public void Hide() {
+		Whackable = false;
 		targetPosition = new Vector3 (
 			transform.localPosition.x,
 			hiddenHeight,

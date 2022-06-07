@@ -49,7 +49,7 @@ public class GameController : MonoBehaviour {
 			}
 		} 
 		else {
-			infoText.text = "Gameover!! Your score is: " +  player.score;
+			infoText.text = "Gameover!!! \nYour score is: " +  player.score;
 			resetTimer -= Time.deltaTime;
 			if(resetTimer < 0){
 				SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
